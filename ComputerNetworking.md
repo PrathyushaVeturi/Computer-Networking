@@ -301,3 +301,88 @@ Home Address = IP Address
 | Used in LAN         | Used across networks |
 ```
 
+# NIC & MAC
+### NIC:
+NIC (Network Interface Card) is the hardware component that allows a device to connect to a network.
+
+Examples:
+- Ethernet port
+- WiFi adapter
+```
+Laptop
+   │
+ NIC
+   │
+Network
+```
+- Without a NIC, a device cannot send or receive network data.
+
+### MAC:
+Every NIC is assigned a MAC Address.
+
+Think of it like:
+- NIC = Person
+- MAC Address = Person's Fingerprint
+Example:
+```
+NIC
+ │
+ └── MAC Address
+     00:1A:2B:3C:4D:5E
+```
+So, every NIC has a MAC Address.
+
+### How Communication Happens Inside a LAN
+Suppose:
+```
+Laptop A
+MAC: AA:AA:AA:AA:AA:AA
+
+Laptop B
+MAC: BB:BB:BB:BB:BB:BB
+```
+Both are connected to the same WiFi router. When Laptop A sends data to Laptop B:
+```
+Laptop A
+   │
+Uses MAC Address of Laptop B
+   │
+Router/Switch
+   │
+Laptop B
+```
+Inside a LAN, devices use MAC addresses to identify the exact destination device.
+
+### Why MAC is Needed if IP Exists?
+Imagine:
+```
+Laptop A
+IP: 192.168.1.10
+
+Laptop B
+IP: 192.168.1.20
+```
+IP tells: `"Which device should receive the packet?"`
+
+But eventually the packet must reach the physical network card.
+
+That's where MAC comes in.
+
+# When you access Netflix:
+```
+Laptop
+ │
+NIC
+ │
+MAC Address
+ │
+Private IP
+ │
+Router
+ │
+Public IP
+ │
+Internet
+ │
+Netflix Server
+```
